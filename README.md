@@ -40,5 +40,5 @@ node publisher.js
 - The main component in the front end responsible for displaying the files is `fileList`. It contains the code for parsing the file list data from backend and rendering the needed view
 -  `express-session` is being used to store session information and certain middlewares are used to resolve user details and renew token
  - The notification bell icon displays notification of any file changes of files
- - The `publisher.js` service polls the drive activities api and fetches the updates which it pushes to a redis channel maintained for that user
+ - The `publisher.js` service polls the drive activities api and fetches the updates which it pushes to a redis channel maintained for that user. It scans redis for the users that have onboarded onto the application, and gets the access tokens from redis.
 - When a user connects to `/notifiations` websocket endpoint, the server checks for any messages in the user specific channel in redis, and forwards notifications 
